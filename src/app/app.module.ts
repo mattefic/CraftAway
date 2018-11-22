@@ -7,6 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { ChatService } from '../services/chat.service'
+import { UtenteService } from '../services/utente.service'
+
 @NgModule({
   declarations: [
     MyApp,
@@ -24,6 +27,8 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
+    ChatService,
+    UtenteService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
