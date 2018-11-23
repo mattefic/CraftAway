@@ -1,3 +1,6 @@
+import { Utente } from "./utente";
+
+
 export class Messaggio{
   idConversazione: string;
   mittente: Utente;

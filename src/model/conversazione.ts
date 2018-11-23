@@ -1,13 +1,16 @@
+import { Utente } from "./utente";
+import { Messaggio } from "./messaggio";
+
 export class Conversazione{
   id: string;
-  utente1: Utente;
-  utente2: Utente;
+  utenteLoggato: Utente;
+  altroUtente: Utente;
   messaggi: Messaggio[];
 
-  constructor(id: string, utente1: Utente, utente2: Utente, messaggi: Messaggio[]){
+  constructor(id: string, utenteLoggato: Utente, altroUtente: Utente, messaggi: Messaggio[]){
     this.id = id;
-    this.utente1 = utente1;
-    this.utente2 = utente2;
+    this.utenteLoggato = utenteLoggato;
+    this.altroUtente = altroUtente;
     this.messaggi = messaggi;
   }
 }

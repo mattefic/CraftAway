@@ -1,3 +1,8 @@
+import { Paese } from "./paese";
+import { Categoria } from "./categoria";
+import { Materiale } from "./materiale";
+import { Utente } from "./utente";
+
 export class Inserzione {
   immagini: string[];
   titolo: string;

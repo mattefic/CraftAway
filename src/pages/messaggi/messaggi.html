@@ -14,5 +14,12 @@
 
 
 <ion-content padding>
-
+  <ion-card *ngFor="let conversazione of conversazioni" (click)="conversazioneTapped(conversazione.id)">
+    <ion-card-content>
+      <b text-left>{{conversazione.altroUtente.nome}}</b>
+      <p text-right>{{conversazione.messaggi[0].timestamp.getDay()}}/{{conversazione.messaggi[0].timestamp.getMonth()}}</p>
+      <br>
+      {{conversazione.messaggi[0].testo}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

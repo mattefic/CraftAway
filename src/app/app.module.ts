@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { MessaggiPage } from "../pages/messaggi/messaggi";
 
 import { ChatService } from '../services/chat.service'
 import { UtenteService } from '../services/utente.service'
@@ -13,7 +14,8 @@ import { UtenteService } from '../services/utente.service'
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    MessaggiPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { UtenteService } from '../services/utente.service'
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    MessaggiPage
   ],
   providers: [
     StatusBar,

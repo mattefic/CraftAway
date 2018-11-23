@@ -1,3 +1,6 @@
+import { Inserzione } from "./inserzione";
+
+
 export class Utente{
   nome: string;
   email: string;

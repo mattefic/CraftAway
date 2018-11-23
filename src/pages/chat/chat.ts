@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Messaggio } from "../../model/messaggio";
+import { ChatService } from "../../services/chat.service";
 /**
  * Generated class for the ChatPage page.
  *
@@ -16,7 +17,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ChatPage {
   chat: Messaggio[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public chatService: ChatService) {
+    this.chat = chatService.getChat(navParams.get('idConversazione'), 0, 1);
+    console.log(this.chat);
   }
 
   ionViewDidLoad() {
@@ -28,7 +31,7 @@ export class ChatPage {
   }
 
   loadMoreMessages(){
-    
+
   }
 
 }

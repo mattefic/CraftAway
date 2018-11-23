@@ -1,3 +1,8 @@
+import { Categoria } from "./categoria";
+import { Paese } from "./paese";
+import { Materiale } from "./materiale";
+
+
 export class Ricerca{
   query: string;
   categoria: Categoria;
@@ -6,7 +11,7 @@ export class Ricerca{
   prezzoMin: number;
   prezzoMax: number;
 
-  constructor(query: string, categoria: Categoria, paese: Paese, materiali: Materiale[], prezzoMin: number
+  constructor(query: string, categoria: Categoria, paese: Paese, materiali: Materiale[], prezzoMin: number,
   prezzoMax: number){
     this.query = query;
     this.categoria = categoria;
