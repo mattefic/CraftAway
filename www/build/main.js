@@ -1,6 +1,108 @@
 webpackJsonp([3],{
 
-/***/ 109:
+/***/ 100:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UtenteService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_utente__ = __webpack_require__(153);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var UtenteService = /** @class */ (function () {
+    function UtenteService() {
+        this.utenteLoggato = new __WEBPACK_IMPORTED_MODULE_1__model_utente__["a" /* Utente */]("UtenteLoggato", "utenteloggato@email.com", "nonImporta", new Date(2018 - 9 - 20), 1, 1, {});
+    }
+    UtenteService.prototype.login = function (email, password) {
+    };
+    UtenteService.prototype.signup = function (utente) {
+    };
+    UtenteService.prototype.logout = function () {
+    };
+    UtenteService.prototype.deleteAccount = function () {
+    };
+    UtenteService.prototype.changeLanguage = function (lingua) {
+    };
+    UtenteService.prototype.modifyProfile = function (utente) {
+    };
+    UtenteService.prototype.getUtenteLoggato = function () {
+        return this.utenteLoggato;
+    };
+    UtenteService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], UtenteService);
+    return UtenteService;
+}());
+
+//# sourceMappingURL=utente.service.js.map
+
+/***/ }),
+
+/***/ 101:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessaggiPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_chat_service__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages__ = __webpack_require__(248);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the MessaggiPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MessaggiPage = /** @class */ (function () {
+    function MessaggiPage(navCtrl, navParams, chatService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.chatService = chatService;
+        this.conversazioni = chatService.getConversations();
+    }
+    MessaggiPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad MessaggiPage');
+    };
+    MessaggiPage.prototype.conversazioneTapped = function (idConversazione) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages__["a" /* CHAT_PAGE */], { "idConversazione": idConversazione });
+    };
+    MessaggiPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-messaggi',template:/*ion-inline-start:"C:\Users\Leonardo Formichetti\Desktop\Ionic Projects\CraftAway\src\pages\messaggi\messaggi.html"*/'<!--\n  Generated template for the MessaggiPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Messaggi</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card *ngFor="let conversazione of conversazioni" (click)="conversazioneTapped(conversazione.id)">\n    <ion-card-content>\n      <b text-left>{{conversazione.altroUtente.nome}}</b>\n      <p text-right>{{conversazione.messaggi[0].timestamp.getDay()}}/{{conversazione.messaggi[0].timestamp.getMonth()}}</p>\n      <br>\n      {{conversazione.messaggi[0].testo}}\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Leonardo Formichetti\Desktop\Ionic Projects\CraftAway\src\pages\messaggi\messaggi.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_chat_service__["a" /* ChatService */]])
+    ], MessaggiPage);
+    return MessaggiPage;
+}());
+
+//# sourceMappingURL=messaggi.js.map
+
+/***/ }),
+
+/***/ 111:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,24 +115,24 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 109;
+webpackEmptyAsyncContext.id = 111;
 
 /***/ }),
 
-/***/ 150:
+/***/ 152:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/chat/chat.module": [
-		274,
+		275,
 		1
 	],
 	"../pages/messaggi/messaggi.module": [
-		275,
+		276,
 		2
 	],
 	"../pages/mie-inserzioni/mie-inserzioni.module": [
-		276,
+		277,
 		0
 	]
 };
@@ -45,77 +147,43 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 150;
+webpackAsyncContext.id = 152;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 151:
+/***/ 153:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_conversazione__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_messaggio__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_utente__ = __webpack_require__(246);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var ChatService = /** @class */ (function () {
-    function ChatService() {
-        var utenteLoggato = new __WEBPACK_IMPORTED_MODULE_2__model_utente__["a" /* Utente */]("UtenteLoggato", "utenteloggato@email.com", "nonImporta", new Date(2018 - 9 - 20), 1, 1, {});
-        var altroUtente1 = new __WEBPACK_IMPORTED_MODULE_2__model_utente__["a" /* Utente */]("AltroUtente1", "altroutente1@email.com", "nonImporta", new Date(2018 - 9 - 20), 1, 1, {});
-        var altroUtente2 = new __WEBPACK_IMPORTED_MODULE_2__model_utente__["a" /* Utente */]("AltroUtente2", "altroutente2@email.com", "nonImporta", new Date(2018 - 9 - 20), 1, 1, {});
-        var messaggio1 = new __WEBPACK_IMPORTED_MODULE_1__model_messaggio__["a" /* Messaggio */]("1", utenteLoggato, altroUtente1, new Date(2018, 9, 20, 10, 33), "Lorem ipsum dolores");
-        var messaggio2 = new __WEBPACK_IMPORTED_MODULE_1__model_messaggio__["a" /* Messaggio */]("1", altroUtente1, utenteLoggato, new Date(2018, 9, 20, 10, 33), "Lorem ipsum dolores");
-        var conversazione1 = new __WEBPACK_IMPORTED_MODULE_0__model_conversazione__["a" /* Conversazione */]("1", utenteLoggato, altroUtente1, [messaggio1, messaggio2]);
-        messaggio1 = new __WEBPACK_IMPORTED_MODULE_1__model_messaggio__["a" /* Messaggio */]("2", utenteLoggato, altroUtente2, new Date(2018, 9, 20, 10, 33), "Lorem ipsum dolores");
-        messaggio2 = new __WEBPACK_IMPORTED_MODULE_1__model_messaggio__["a" /* Messaggio */]("2", altroUtente2, utenteLoggato, new Date(2018, 9, 20, 10, 33), "Lorem ipsum dolores");
-        var conversazione2 = new __WEBPACK_IMPORTED_MODULE_0__model_conversazione__["a" /* Conversazione */]("2", utenteLoggato, altroUtente2, [messaggio1, messaggio2]);
-        this.conversazioni = [conversazione1, conversazione2];
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Utente; });
+var Utente = /** @class */ (function () {
+    function Utente(nome, email, password, dataIscrizione, inserzioniPubblicate, inserzioniOnline, inserzioniPerCategoria) {
+        this.nome = nome;
+        this.email = email;
+        this.password = password;
+        this.dataIscrizione = dataIscrizione;
+        this.inserzioniPubblicate = inserzioniPubblicate;
+        this.inserzioniOnline = inserzioniOnline;
+        this.inserzioniPerCategoria = inserzioniPerCategoria;
+        //^ teoricamente il dizionario JSON dovrebbe essere convertito in un oggetto javascript
+        //direttamente assegnabile alla variabile; in caso contrario scriverò dei metodi di utility
+        //per popolare la variabile a partire dal dizionario JSON
     }
-    ChatService.prototype.getConversations = function () {
-        return this.conversazioni;
-    };
-    ChatService.prototype.getChat = function (idConversazione, base, offset) {
-        for (var i = 0; i < this.conversazioni.length; i++) {
-            if (this.conversazioni[i].id == idConversazione) {
-                return this.conversazioni[i].messaggi.slice(base, offset + 1);
-            }
-        }
-    };
-    ChatService.prototype.sendMessage = function (messaggio) {
-        return;
-    };
-    ChatService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
-    ], ChatService);
-    return ChatService;
+    return Utente;
 }());
 
-//# sourceMappingURL=chat.service.js.map
+//# sourceMappingURL=utente.js.map
 
 /***/ }),
 
-/***/ 195:
+/***/ 197:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(220);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -123,7 +191,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 218:
+/***/ 220:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -131,13 +199,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(271);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_messaggi_messaggi__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_chat_service__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_utente_service__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_messaggi_messaggi__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_chat_service__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_utente_service__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -196,7 +264,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 244:
+/***/ 246:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -215,7 +283,7 @@ var Conversazione = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 245:
+/***/ 247:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -235,41 +303,28 @@ var Messaggio = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 246:
+/***/ 248:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Utente; });
-var Utente = /** @class */ (function () {
-    function Utente(nome, email, password, dataIscrizione, inserzioniPubblicate, inserzioniOnline, inserzioniPerCategoria) {
-        this.nome = nome;
-        this.email = email;
-        this.password = password;
-        this.dataIscrizione = dataIscrizione;
-        this.inserzioniPubblicate = inserzioniPubblicate;
-        this.inserzioniOnline = inserzioniOnline;
-        this.inserzioniPerCategoria = inserzioniPerCategoria;
-        //^ teoricamente il dizionario JSON dovrebbe essere convertito in un oggetto javascript
-        //direttamente assegnabile alla variabile; in caso contrario scriverò dei metodi di utility
-        //per popolare la variabile a partire dal dizionario JSON
-    }
-    return Utente;
-}());
-
-//# sourceMappingURL=utente.js.map
+/* unused harmony export MESSAGGI_PAGE */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CHAT_PAGE; });
+var MESSAGGI_PAGE = 'MessaggiPage';
+var CHAT_PAGE = 'ChatPage';
+//# sourceMappingURL=pages.js.map
 
 /***/ }),
 
-/***/ 271:
+/***/ 273:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_messaggi_messaggi__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_messaggi_messaggi__ = __webpack_require__(101);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -306,7 +361,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 272:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -341,69 +396,16 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 273:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UtenteService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var UtenteService = /** @class */ (function () {
-    function UtenteService() {
-    }
-    UtenteService.prototype.login = function (email, password) {
-    };
-    UtenteService.prototype.signup = function (utente) {
-    };
-    UtenteService.prototype.logout = function () {
-    };
-    UtenteService.prototype.deleteAccount = function () {
-    };
-    UtenteService.prototype.changeLanguage = function (lingua) {
-    };
-    UtenteService.prototype.modifyProfile = function (utente) {
-    };
-    UtenteService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
-    ], UtenteService);
-    return UtenteService;
-}());
-
-//# sourceMappingURL=utente.service.js.map
-
-/***/ }),
-
-/***/ 279:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MESSAGGI_PAGE */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CHAT_PAGE; });
-var MESSAGGI_PAGE = 'MessaggiPage';
-var CHAT_PAGE = 'ChatPage';
-//# sourceMappingURL=pages.js.map
-
-/***/ }),
-
 /***/ 99:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessaggiPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_chat_service__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages__ = __webpack_require__(279);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_conversazione__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_messaggio__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_utente__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utente_service__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -417,38 +419,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the MessaggiPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var MessaggiPage = /** @class */ (function () {
-    function MessaggiPage(navCtrl, navParams, chatService) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.chatService = chatService;
-        this.conversazioni = chatService.getConversations();
+
+var ChatService = /** @class */ (function () {
+    function ChatService(utenteService) {
+        this.utenteService = utenteService;
+        var utenteLoggato = utenteService.getUtenteLoggato();
+        var altroUtente1 = new __WEBPACK_IMPORTED_MODULE_2__model_utente__["a" /* Utente */]("AltroUtente1", "altroutente1@email.com", "nonImporta", new Date(2018 - 9 - 20), 1, 1, {});
+        var altroUtente2 = new __WEBPACK_IMPORTED_MODULE_2__model_utente__["a" /* Utente */]("AltroUtente2", "altroutente2@email.com", "nonImporta", new Date(2018 - 9 - 20), 1, 1, {});
+        var messaggio1 = new __WEBPACK_IMPORTED_MODULE_1__model_messaggio__["a" /* Messaggio */]("1", utenteLoggato, altroUtente1, new Date(2018, 9, 20, 10, 33), "Lorem ipsum dolores");
+        var messaggio2 = new __WEBPACK_IMPORTED_MODULE_1__model_messaggio__["a" /* Messaggio */]("1", altroUtente1, utenteLoggato, new Date(2018, 9, 20, 10, 33), "Lorem ipsum dolores");
+        var conversazione1 = new __WEBPACK_IMPORTED_MODULE_0__model_conversazione__["a" /* Conversazione */]("1", utenteLoggato, altroUtente1, [messaggio1, messaggio2]);
+        messaggio1 = new __WEBPACK_IMPORTED_MODULE_1__model_messaggio__["a" /* Messaggio */]("2", utenteLoggato, altroUtente2, new Date(2018, 9, 20, 10, 33), "Lorem ipsum dolores");
+        messaggio2 = new __WEBPACK_IMPORTED_MODULE_1__model_messaggio__["a" /* Messaggio */]("2", altroUtente2, utenteLoggato, new Date(2018, 9, 20, 10, 33), "Lorem ipsum dolores");
+        var conversazione2 = new __WEBPACK_IMPORTED_MODULE_0__model_conversazione__["a" /* Conversazione */]("2", utenteLoggato, altroUtente2, [messaggio1, messaggio2]);
+        this.conversazioni = [conversazione1, conversazione2];
     }
-    MessaggiPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad MessaggiPage');
+    ChatService.prototype.getConversations = function () {
+        return this.conversazioni;
     };
-    MessaggiPage.prototype.conversazioneTapped = function (idConversazione) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages__["a" /* CHAT_PAGE */], { "idConversazione": idConversazione });
+    ChatService.prototype.getChat = function (idConversazione, base, offset) {
+        for (var i = 0; i < this.conversazioni.length; i++) {
+            if (this.conversazioni[i].id == idConversazione) {
+                return this.conversazioni[i].messaggi.slice(base, offset + 1);
+            }
+        }
     };
-    MessaggiPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-messaggi',template:/*ion-inline-start:"C:\Users\Leonardo Formichetti\Desktop\Ionic Projects\CraftAway\src\pages\messaggi\messaggi.html"*/'<!--\n  Generated template for the MessaggiPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Messaggi</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card *ngFor="let conversazione of conversazioni" (click)="conversazioneTapped(conversazione.id)">\n    <ion-card-content>\n      <b text-left>{{conversazione.altroUtente.nome}}</b>\n      <p text-right>{{conversazione.messaggi[0].timestamp.getDay()}}/{{conversazione.messaggi[0].timestamp.getMonth()}}</p>\n      <br>\n      {{conversazione.messaggi[0].testo}}\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Leonardo Formichetti\Desktop\Ionic Projects\CraftAway\src\pages\messaggi\messaggi.html"*/,
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_chat_service__["a" /* ChatService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_chat_service__["a" /* ChatService */]) === "function" && _c || Object])
-    ], MessaggiPage);
-    return MessaggiPage;
-    var _a, _b, _c;
+    ChatService.prototype.sendMessage = function (messaggio) {
+        return;
+    };
+    ChatService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__utente_service__["a" /* UtenteService */]])
+    ], ChatService);
+    return ChatService;
 }());
 
-//# sourceMappingURL=messaggi.js.map
+//# sourceMappingURL=chat.service.js.map
 
 /***/ })
 
-},[195]);
+},[197]);
 //# sourceMappingURL=main.js.map

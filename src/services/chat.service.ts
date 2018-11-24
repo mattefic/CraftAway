@@ -3,13 +3,13 @@ import { Messaggio } from "../model/messaggio";
 import { Utente } from "../model/utente";
 import {Observable} from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
-
+import { UtenteService } from "./utente.service";
 @Injectable()
 export class ChatService {
     conversazioni: Conversazione[];
 
-    constructor() {
-      let utenteLoggato = new Utente("UtenteLoggato", "utenteloggato@email.com", "nonImporta", new Date(2018-9-20), 1, 1, {});
+    constructor(public utenteService: UtenteService) {
+      let utenteLoggato = utenteService.getUtenteLoggato();
       let altroUtente1 = new Utente("AltroUtente1", "altroutente1@email.com", "nonImporta", new Date(2018-9-20), 1, 1, {});
       let altroUtente2 = new Utente("AltroUtente2", "altroutente2@email.com", "nonImporta", new Date(2018-9-20), 1, 1, {});
 

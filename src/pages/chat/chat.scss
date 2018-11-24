@@ -1,3 +1,14 @@
 page-chat {
-
+  .scroll-content{
+    overflow-y: auto !important;
+  }
+  .messaggio {
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+  .timestamp {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 10px;
+  }
 }

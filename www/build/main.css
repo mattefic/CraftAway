@@ -25673,3 +25673,18 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+page-chat .scroll-content {
+  overflow-y: auto !important;
+}
+
+page-chat .messaggio {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+page-chat .timestamp {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 10px;
+}

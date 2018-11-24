@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Chat</ion-title>
+    <ion-title>{{nomeAltroUtente}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,17 @@
 
 <ion-content padding>
 
+    <div *ngFor="let messaggio of chat">
+      <p class="messaggio" *ngIf="messaggio.mittente.nome == nomeAltroUtente" text-left>{{messaggio.testo}}</p>
+      <p  class="messaggio" *ngIf="messaggio.mittente.nome != nomeAltroUtente" text-right>{{messaggio.testo}}</p>
+      <p class="timestamp" *ngIf="messaggio.mittente.nome == nomeAltroUtente" text-left>{{messaggio.timestamp.getHours()}}:{{messaggio.timestamp.getMinutes()}}</p>
+      <p class="timestamp" *ngIf="messaggio.mittente.nome != nomeAltroUtente" text-right>{{messaggio.timestamp.getHours()}}:{{messaggio.timestamp.getMinutes()}}</p>
+    </div>
+
+  <ion-item style="position: absolute; bottom: 0px;">
+  <ion-input type="text" placeholder="Scrivi messaggio"  [(ngModel)]="inputMessaggio"></ion-input>
+  <button (click)="sendMessage()" ion-button icon-only item-right>
+    <ion-icon name="send"></ion-icon>
+  </button>
+  </ion-item>
 </ion-content>
